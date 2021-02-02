@@ -247,11 +247,9 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-
-
-function annoyingSong(x) {
-  for (x=99;x>=1;x--)
-        console.log(`${x} bottles of soda on the wall, ${x} bottles of soda, take one down pass it around ${x - 1} bottles of soda on the wall`);
+function annoyingSong(number) {
+  for (i=number;number>=1;number--)
+        console.log(`${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number - 1} bottles of soda on the wall`);
 };
 
 
@@ -270,11 +268,23 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(points){
+  if (points >= 90) {
+    return "you got an A"
   }
-  
-  
+  else if (points >= 80 && points < 90) {
+    return "you got a B"
+  }
+  else if (points >= 70 && points < 80) {
+    return "you got a C"
+  }
+  else if (points >= 60 && points < 70) {
+    return "you got a D"
+  }
+  else if (points < 60) {
+    return "you got an F"
+  }
+}
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
