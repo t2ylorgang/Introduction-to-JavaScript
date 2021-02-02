@@ -156,18 +156,53 @@ HINT: While you can complete this with only conditionals based on strings, it ma
 Use the game function below to do the following:
   1. Receive 2 parameters the user's choice and the computer's choice
   2. Return whether the user won, lost, or tied based on these rules of the game described below - the strings returned need to match the strings below exactly.
-   - win should return "you win!"
-   - lose should return "you lose!"
-   - tie should return "it's a tie"
+  - win should return "you win!"
+  - lose should return "you lose!"
+  - tie should return "it's a tie"
   
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+
+let computer = Math.random();
+
+if (computer < 0.34) {
+  computer = "rock";
+} else if (computer <= 0.67) {
+  computer = "paper";
+} else {
+  computer = "scissors";
 }
+
+function game(user, computer) {
+    if (user===computer) {
+      return "it's a tie"
+    }
+    else if (user==="rock") {
+      if (computer==="scissors") {
+        return "you win!"
+      }
+      else if (computer==="paper") {
+        return "you lose!"
+      }
+    }
+    else if (user==="paper") {
+      if (computer==="scissors") {
+        return "you lose!"
+      } else if (computer==="rock") {
+        return "you win!"
+      }
+    }
+    else if (user==="scissors") {
+      if (computer==="rock") {
+        return "you lose!"
+      } else if (computer==="paper") {
+        return "you win!"
+      }
+    }
+};
   
   
 
